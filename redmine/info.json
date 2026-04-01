@@ -1,0 +1,107 @@
+{
+    "name": "redmine",
+    "version": "1.0.0",
+    "label": "Redmine",
+    "description": "Redmine is a flexible project management web application. Written using the Ruby on Rails framework",
+    "publisher": "Fortinet CSE",
+    "contributor": "Naili.M",
+    "icon_small_name": "small.png",
+    "icon_large_name": "large.png",
+    "configuration": {
+        "fields": [
+            {
+                "title": "Server URL",
+                "description": "Specify Redmine URL.",
+                "type": "text",
+                "name": "server_url",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "value": "https://redmine.com",
+                "tooltip": "Specify Redmine URL."
+            },
+            {
+                "title": "API Key",
+                "description": "Specify Redmine API key",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "password",
+                "name": "api_key",
+                "tooltip": "Specify Redmine API key"
+            },
+            {
+                "title": "Verify SSL",
+                "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+                "name": "verify_ssl",
+                "type": "checkbox",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": true,
+                "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+            }
+        ]
+    },
+    "operations": [
+        {
+            "title": "API Call",
+            "description": "Run API Call",
+            "tooltip": "",
+            "operation": "run_api_call",
+            "annotation": "run_api_call",
+            "parameters": [
+                {
+                    "title": "HTTP Method",
+                    "name": "http_method",
+                    "type": "select",
+                    "tooltip": "API HTTP Method.",
+                    "description": "API HTTP Method.",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "options": [
+                        "get",
+                        "post",
+                        "put"
+                    ]
+                },
+                {
+                    "title": "Endpoint",
+                    "name": "endpoint",
+                    "description": "API Endpoint",
+                    "tooltip": "API Endpoint",
+                    "type": "text",
+                    "visible": true,
+                    "editable": true,
+                    "required": true
+                },
+                {
+                    "title": "URL Parameters",
+                    "name": "url_params",
+                    "description": "API Call URL Parameters",
+                    "tooltip": "API Call URL Parameters",
+                    "type": "json",
+                    "visible": true,
+                    "editable": true,
+                    "required": false
+                },
+                {
+                    "title": "Payload",
+                    "name": "payload",
+                    "description": "API Call Payload",
+                    "tooltip": "API Call Payload",
+                    "type": "json",
+                    "visible": true,
+                    "editable": true,
+                    "required": false
+                }
+            ],
+            "output_schema": "",
+            "enabled": true
+        }
+    ],
+    "category": "IT Infrastructure",
+    "active": true,
+    "cs_compatible": true
+}

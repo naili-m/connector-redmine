@@ -1,0 +1,103 @@
+{
+    "name": "fortinet-fabric-studio",
+    "version": "1.0.0",
+    "label": "Fortinet Fabric Studio",
+    "description": "Fortinet Fabric Studio an internal tool for SE and partners",
+    "publisher": "Fortinet CSE",
+    "contributor": "Naili.M",
+    "icon_small_name": "small.png",
+    "icon_large_name": "large.png",
+    "configuration": {
+        "fields": [
+            {
+                "title": "Fabric Studio URL",
+                "description": "Specify Fbric Studio URL.",
+                "type": "text",
+                "name": "server_url",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "value": "https://fortinet-fabric-studio.com",
+                "tooltip": "Specify Fbric Studio URL."
+            },
+            {
+                "title": "Username",
+                "description": "Specify Fabric Studio Username",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "username",
+                "tooltip": "Specify Fabric Studio Username"
+            },            
+            {
+                "title": "Password",
+                "description": "Specify Fabric Studio password",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "password",
+                "name": "password",
+                "tooltip": "Specify Fabric Studio password"
+            },
+            {
+                "title": "Verify SSL",
+                "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+                "name": "verify_ssl",
+                "type": "checkbox",
+                "required": false,
+                "editable": true,
+                "visible": true,
+                "value": true,
+                "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+            }
+        ]
+    },
+    "operations": [
+        {
+            "title": "Power On VM",
+            "description": "Power On a VM in the current Fabric",
+            "tooltip": "",
+            "operation": "power_on",
+            "annotation": "power_on",
+            "parameters": [
+                {
+                    "title": "VM ID",
+                    "name": "vm_id",
+                    "description": "ID of the VM to poweron",
+                    "tooltip": "ID of the VM to poweron",
+                    "type": "text",
+                    "visible": true,
+                    "editable": true,
+                    "required": false
+                }
+            ],
+            "output_schema": "",
+            "enabled": true
+        },
+        {
+            "title": "Power Off VM",
+            "description": "Power Off a VM in the current Fabric",
+            "tooltip": "",
+            "operation": "power_off",
+            "annotation": "power_off",
+            "parameters": [
+                {
+                    "title": "VM ID",
+                    "name": "vm_id",
+                    "description": "ID of the VM to poweroff",
+                    "tooltip": "ID of the VM to poweroff",
+                    "type": "text",
+                    "visible": true,
+                    "editable": true,
+                    "required": false
+                }
+            ],
+            "output_schema": "",
+            "enabled": true
+        }        
+    ],
+    "category": "IT Infrastructure",
+    "active": true,
+    "cs_compatible": true
+}

@@ -1,12 +1,13 @@
 from connectors.core.connector import Connector, get_logger, ConnectorError
 from .operations import operations, _check_health
 
-logger = get_logger('redmine')
+logger = get_logger('Fabric Studio')
 
 
-class RedMine(Connector):
+class FortinetFabricStudio(Connector):
 
     def execute(self, config, operation, params, **kwargs):
+        params.update({'action':operation})
         action = operations.get(operation)
         return action(config, params)
 
